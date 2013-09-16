@@ -5,11 +5,11 @@ class Task < ActiveRecord::Base
   
   def in_the_future
     response = RestClient.get(self.url)
+    puts response
     self.executed = true
     self.save!
   rescue Exception => e
     puts e.message
   end
   handle_asynchronously :in_the_future, run_at: Proc.new { |i| i.exec_time }
-   
 end
