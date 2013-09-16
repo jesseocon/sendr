@@ -10,10 +10,7 @@ class TasksController < ApplicationController
   
   def create
     @task = Task.new(params[:task])
-    if @task.save
-      handle_asynchronously :in_the_future, :run_at => Proc.new { @task.exec_time }
-    else
-      render :new
+    @task.save
   end
   
   def edit
