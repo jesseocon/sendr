@@ -10,9 +10,10 @@ class TasksController < ApplicationController
   
   def create
     @error = { error: "your task could not be created" }
-    @task = Task.new()
-    @task.url = params[:url]
+    @task = Task.new(command_url: CommandUrl.new(url_string: params[:url]))
+    @task.url = params[:url] if params[:url]
     @task.exec_time = params[:exec_time]
+    @task.method = params[:method] if params[:method]
     if @task.save
       @task.in_the_future
       respond_with(@task)
