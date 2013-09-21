@@ -2,7 +2,7 @@ class TasksController < ApplicationController
   respond_to :json
   def index
     @tasks = Task.all
-    Rails.logger.info(@tasks)
+    puts @tasks.inspect
     respond_with @tasks
   end
   
