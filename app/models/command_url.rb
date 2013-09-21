@@ -33,11 +33,14 @@ class CommandUrl
   
   def params
     params = {}
-    array = self.query.split('&')
-    array.each do |arr|
-      a = arr.split('=')
-      params[a[0]] = a[1]
+    if self.query
+      array = self.query.split('&')
+      array.each do |arr|
+        a = arr.split('=')
+        params[a[0]] = a[1]
+      end
     end
+
     @params = params
   end
   
