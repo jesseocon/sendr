@@ -3,6 +3,8 @@ module Api
     class TasksController < ApplicationController
       respond_to :json
       def index
+        @tasks = Task.all
+        puts @tasks.inspect
         respond_with Task.all
       end
 
