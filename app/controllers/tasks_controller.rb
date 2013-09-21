@@ -1,7 +1,9 @@
 class TasksController < ApplicationController
   respond_to :json
   def index
-    respond_with Task.all
+    @tasks = Task.all
+    Rails.logger.info(@tasks)
+    respond_with @tasks
   end
   
   def new
