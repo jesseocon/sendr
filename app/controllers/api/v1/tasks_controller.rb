@@ -48,7 +48,15 @@ module Api
       end
 
       def destroy
-
+        @task = Task.find(params[:id])
+        dj_id = @task.dj_id
+        if @task.destroy
+          Delayed::Job.find(dj_id).destroy
+          respond_with(@task)
+        else
+          @error = {"message" => 'could not be destroyed' }
+          respond_with(@error.to_json)
+        end
       end
     end
   end
