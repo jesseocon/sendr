@@ -32,7 +32,7 @@ module Api
         @error = { error: "your task could not be created" }
         @task = Task.find(params[:id])
         if @task.update_attributes(params[:task])
-          Delayed::Job.find(@task.dj_id).destroy
+          Delayed::Job.find(@task.dj_id).destroy rescue nil
           response = @task.in_the_future
           @task.dj_id = response.id
           @task.save
@@ -51,7 +51,7 @@ module Api
         @task = Task.find(params[:id])
         dj_id = @task.dj_id
         if @task.destroy
-          Delayed::Job.find(dj_id).destroy
+          Delayed::Job.find(dj_id).destroy rescue nil
           respond_with(@task)
         else
           @error = {"message" => 'could not be destroyed' }
