@@ -43,7 +43,8 @@ module Api
       end
 
       def show 
-
+        @task = Task.find(params[:id])
+        respond_with(@task)
       end
 
       def destroy
