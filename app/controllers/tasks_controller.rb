@@ -12,12 +12,11 @@ class TasksController < ApplicationController
   
   def create
     @error = { error: "your task could not be created" }
-    @task = Task.new(command_url: CommandUrl.new(url_string: params[:url]))
-    @task.url = params[:url] if params[:url]
-    @task.exec_time = params[:exec_time]
-    @task.method = params[:method] if params[:method]
+    @task = Task.new(params[:task])
     if @task.save
-      @task.in_the_future
+      response = @task.in_the_future
+      @task.dj_id = response.id
+      @task.save
       respond_with(@task)
     else
       respond_with(@error)
@@ -29,7 +28,18 @@ class TasksController < ApplicationController
   end
   
   def update
-    
+    puts "im hitting the controller"
+    @error = { error: "your task could not be created" }
+    @task = Task.find(params[:id])
+    if @task.update_attributes(params[:task])
+      response = @task.in_the_future
+      @task.dj_id = response.id
+      @task.save
+      respond_with(@task)
+    else
+      respond_with(@error)
+    end
+      
   end
   
   def show 

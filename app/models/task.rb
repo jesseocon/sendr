@@ -14,7 +14,8 @@ class Task < ActiveRecord::Base
   rescue Exception => e
     puts e.message
   end
-  handle_asynchronously :in_the_future, run_at: Proc.new { |i| i.exec_time }
+  response = handle_asynchronously :in_the_future, run_at: Proc.new { |i| i.exec_time }
+  puts response
   
   def method=(method)
     @method = method.downcase rescue nil
