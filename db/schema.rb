@@ -11,7 +11,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130922020731) do
+ActiveRecord::Schema.define(:version => 20130924051740) do
+
+  create_table "api_keys", :force => true do |t|
+    t.string   "access_token"
+    t.integer  "user_id"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
+
+  add_index "api_keys", ["access_token"], :name => "index_api_keys_on_access_token", :unique => true
 
   create_table "delayed_jobs", :force => true do |t|
     t.integer  "priority",   :default => 0
@@ -44,5 +53,26 @@ ActiveRecord::Schema.define(:version => 20130922020731) do
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
+
+  create_table "users", :force => true do |t|
+    t.string   "email"
+    t.string   "f_name"
+    t.string   "l_name"
+    t.string   "phone"
+    t.string   "password_digest"
+    t.string   "auth_token"
+    t.string   "password_reset_token"
+    t.datetime "password_reset_at"
+    t.string   "verification_token"
+    t.boolean  "verified"
+    t.string   "last_4_digits"
+    t.string   "stripe_id"
+    t.boolean  "admin"
+    t.datetime "created_at",           :null => false
+    t.datetime "updated_at",           :null => false
+  end
+
+  add_index "users", ["email"], :name => "index_users_on_email", :unique => true
+  add_index "users", ["verification_token"], :name => "index_users_on_verification_token"
 
 end
