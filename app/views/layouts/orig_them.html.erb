@@ -1,0 +1,786 @@
+<!DOCTYPE html>
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--><html class="no-js"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>Ortax - Bootstrap Multipurpose HTML5 Theme</title>
+
+<!--=================================
+ Meta tags
+ =================================-->
+
+<meta name="description" content="">
+<meta content="yes" name="apple-mobile-web-app-capable" />
+<meta name="viewport" content="minimum-scale=1.0, width=device-width, maximum-scale=1, user-scalable=no" />
+
+<!--=================================
+ Style Sheets
+ =================================-->
+<link href='http://fonts.googleapis.com/css?family=Lato:400,300,700,400italic,900' rel='stylesheet' type='text/css'>
+
+<%= stylesheet_link_tag    "application", :media => "all" %>
+<%= javascript_include_tag 'modernizr-2.6.2-respond-1.1.0.min.js' %>
+<%= csrf_meta_tags %>
+<!--<script src="js/modernizr-2.6.2-respond-1.1.0.min.js"></script>-->
+
+
+
+
+</head>
+<body class="is-wide">
+	<div id="layout" class="wide-layout">
+<!--=================================
+Markup
+=================================-->
+<!--=========================================
+	Navigation
+  ========================================-->     
+            <header class="navbar-fixed-top">
+                <div class="container">
+                    <div class="header-inner clearfix">
+                        <!-- HEADER BRANDING : begin -->
+						<div class='branding'><%= link_to 'Snedit', static_pages_home_path %></div>
+                        <!-- HEADER BRANDING : end -->
+
+                        <!-- NAV TOGGLE : begin -->
+                        <button class="nav-toggle"><i class="icon-reorder"></i></button>
+                        <!-- NAV TOGGLE : end -->
+
+                        <!-- MAIN NAV : begin -->
+                        <nav class="main">
+                            <ul>
+                                <li><%= link_to raw("<span>Home<span>"), static_pages_home_path %></a></li>
+                                <li>
+                                    <a href="#"><span>Showcase</span></a>
+                                    <ul class="submenu">
+                                        <li><a href="showcase.html" ><span>Circle portfolio</span></a></li>
+                                        <li><a href="showcase-Block.html" ><span>Block Portfolio</span></a></li>
+                                        <li><a href="showcase-detail.html" ><span>Portfolio Detail</span></a></li>
+                                    </ul>
+                                </li>
+                                
+                                <li>
+                                    <a href="#"><span>Pages</span></a>
+                                    <ul class="submenu">
+                                        <li><a href="about.html" ><span>About</span></a></li>
+                                        <li><a href="team.html"><span>Team</span></a></li>
+                                        <li><a href="FAQ.html"><span>FAQ</span></a></li>
+                                        <li><a href="elements.html"><span>Elements</span></a></li>
+                                        <li><a href="pricing.html"><span>Pricing Table</span></a></li>
+                                        <li><a href="soon.html"><span>Coming Soon</span></a></li>
+                                        <li><a href="blank_content.html"><span>Full Width</span></a></li>
+                                        <li><a href="404.html"><span>404 error</span></a></li>
+                                    </ul>
+                                </li>
+                                
+                                <li>
+                                    <a href="blog.html"><span>Blog</span></a>
+                                    <ul class="submenu">
+                                       	<li><a href="blog.html"><span>Masonry Blog</span></a></li>
+                                        <li><a href="blog_listing.html"><span>Standard Blog</span></a></li>
+                                        <li><a href="blog-leftmenu.html"><span>Blog left menu</span></a></li>
+                                        <li><a href="blog-rightmenu.html"><span>Blog Right menu</span></a></li>
+                                        <li><a href="blog-inner.html"><span>Blog Detail</span></a></li>
+                                    </ul>
+                                </li>
+                                
+                                <li><a href="contact.php"><span>Contact</span></a></li>                                
+                                
+                            </ul>
+                            <select>
+                                <option value="index.php">Home</option>
+                                <option value="showcase.html">Showcase</option>
+                                <option value="showcase-Block.html">- Showcase-Block</option>
+                                <option value="showcase-detail.html">- Portfolio Detail</option>
+                                <option value="about.html">About Us</option>
+                                <option value="team.html">Team</option>
+                                <option value="FAQ.html">FAQ</option>
+                                <option value="elements.html">Elements</option>
+                                <option value="pricing.html">Pricing Table</option>
+                                <option value="soon.html">Coming Soon</option>
+                                <option value="blank_content.html">Full Width</option>
+                                <option value="404.html">404 Error</option>
+                                <option value="blog.html">Blog</option>
+                                <option value="blog.html">- Masonry Blog</option>
+                                <option value="blog_listing.html">- Standard Blog</option>
+                                <option value="blog-leftmenu.html">- Blog left menu</option>
+                                <option value="blog-rightmenu.html">- Blog Right menur</option>
+                                <option value="blog-inner.html">- Blog Detail</option>
+                                <option value="contact.php">Contact</option>
+                            </select>
+                        </nav>
+                        <!-- MAIN NAV : end -->
+
+                    </div>
+                </div>
+            </header>
+            <!-- HEADER : end -->
+
+<!--=================================
+ Slider
+ =================================-->
+<section id="home" class="">
+
+	<div id="home-slider" class="flexslider">
+    
+    	<ul class="slides">
+        	<li>
+				<%= image_tag('slider/slide-01.jpg') %>
+                <div class="flex-caption">
+                	<h1 class="animated">Great Branding is a Unforgetable experience</h1>
+                	<p class="animated">There's No Limit to What CrowdFlower Can Do - Just Ask Our Customers</p>
+                	<ul class="flex-buttons">
+						<li><%= link_to 'Sign Up', signup_path %></li>
+						<li><%= link_to 'Sign In', login_path %></li>
+                    	<!--<li><a href="#">Sign Up</a></li> -->
+                    	<!--<li><a href="#">Sign In</a></li>-->
+                    </ul>
+                </div>
+                
+            </li>
+            
+            <li>
+				<%= image_tag('slider/slide-02.png') %>
+                <div class="flex-caption">
+                	<h1 class="animated">Great Branding is a Unforgetable experience</h1>
+                	<p class="animated">There's No Limit to What CrowdFlower Can Do - Just Ask Our Customers</p>
+                	<ul class="flex-buttons">
+						<li><%= link_to 'Sign Up', signup_path %></li>
+						<li><%= link_to 'Sign In', login_path %></li>
+                    </ul>
+                </div>
+                
+            </li>
+            
+            <li>
+				<%= image_tag('slider/slide-03.png') %>
+                <div class="flex-caption">
+                	<h1 class="animated">Great Branding is a Unforgetable experience</h1>
+                	<p class="animated">There's No Limit to What CrowdFlower Can Do - Just Ask Our Customers</p>
+                	<ul class="flex-buttons">
+						<li><%= link_to 'Sign Up', signup_path %></li>
+						<li><%= link_to 'Sign In', login_path %></li>
+                    </ul>
+                </div>
+                
+            </li>
+           
+            
+           
+            
+        </ul>
+        
+    </div>
+	
+   
+</section>
+
+<!--=========================================
+	Service
+  ========================================-->  
+<section id="service-wrappper">
+	<div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-3 col-sm-3">
+                <div class="service">
+                    <div class="service-visual service-hover-a service-hover">
+                        <span class="service-icon icon-desktop"></span>
+                    </div>
+                    <div class="head">
+                        Flat Design
+                    </div>
+                    <p>That is why our micro-campaigns and solutions are individually crafted for each of our clients.</p>
+                </div>
+            </div><!--service column-->
+            
+            <div class="col-lg-3 col-md-3 col-sm-3">
+                <div class="service">
+                	<div class="service-visual service-hover-a service-hover">
+                        <span class="service-icon icon-tablet"></span>
+                    </div>
+                    
+                    <div class="head">
+                        USER EXPERIENCE
+                    </div>
+                    <p>We understand your story is unique. That is why our micro-campaigns and solutions are</p>
+                </div>
+            </div><!--service column-->
+            
+            
+            <div class="col-lg-3 col-md-3 col-sm-3">
+                <div class="service">
+                    <div class="service-visual service-hover-a service-hover">
+                        <span class="service-icon icon-file-alt"></span>
+                    </div>
+                    <div class="head">
+                       Unlimted Colors
+                    </div>
+                    <p>Converting pixel-perfect designs into functional web apps is an art. Coding</p>
+
+                </div>
+            </div><!--service column-->
+            
+            
+            <div class="col-lg-3 col-md-3 col-sm-3">
+                <div class="service">
+                    <div class="service-visual service-hover-a service-hover">
+                        <span class="service-icon icon-folder-open-alt"></span>
+                    </div>
+                    <div class="head">
+                        Easy to Use
+                    </div>
+                    <p>Brick and mortar selling is only half the battle. We understand the difference and offer user-friendly</p>
+                </div>
+            </div><!--service column-->
+            
+        </div>
+    </div>
+</section>
+
+
+<!--=========================================
+  showcase
+  ========================================-->
+<section id="showcase-wrapper">
+	<div class="container">
+    	<div class="section-heading-lg">
+        	Make the right first Impression
+        </div>
+        <div class="showcase-text">
+        	<div class="row">
+            
+            	<div class="col-lg-6 col-md-6 col-sm-6">
+                	<p>With Responsive and mobile design all the rage these days it is important to know whether visitors to your site are happy and how to detect whether they are happy across desktops, mobiles and tablets.</p>
+                </div>
+                
+                <div class="col-lg-6 col-md-6 col-sm-6">
+                	<p>Now before I show you how to do a 30 second check on this, firstly a quick pointer. It is imperative not to use this method solely as a reason to change your site around. It’s important to dig deeper into stats to measure satisfaction of users. </p>
+                </div>
+                
+            </div>
+            
+            <div class="row">
+            
+            	<div class="col-lg-6 col-md-6 col-sm-6">
+                	<div class="showcase-links-left"><a href="#">Learn More</a></div>
+                </div>
+                
+                <div class="col-lg-6 col-md-6 col-sm-6">
+                	<div class="showcase-links-right"><a href="#">Live Preview</a></div>
+                </div>
+                
+            </div>
+            
+        </div>
+        <div class="clearfix"></div>
+        
+        <div class="showcase-images">
+			<%= image_tag('showcase/left.png') %>
+			<%= image_tag('showcase/1.png') %>
+			<%= image_tag('showcase/right.png') %>
+        </div>
+        
+    </div>
+    
+    <div class="promotion">
+        <div class="container">
+        
+        	<div class="heading">Are you ready to Buy this Theme?</div>
+            <p>Lets face it, social media is tricky business in the wrong hands. </p>
+        	<div class="link"><a href="#">Only on Themeforest</a></div>
+        </div>
+       
+    </div>
+    
+    
+</section>
+
+
+<!--=================================
+ Blog
+ =================================-->
+<section id="blog-wrapper">
+	
+    <div class="section-heading"><a href="#">Latest From Ortax blog</a></div>
+    
+	<div class="blog-carousel">
+    	
+        <article class="blog">
+        	<div class="blog-visual">
+				<%= image_tag('blog/b1.jpg') %>
+            	<!--<img src="assets/img/blog/b1.jpg" alt="" />-->
+                <div class="blog-hover">
+                	<div class="hover-icons animated ">
+                    	<span class="icon-search"></span>
+                    </div>
+                </div>
+            </div>
+            <a href="#" class="head">Should You Spend Money for a Mention?</a>
+            <ul>
+            	<li>22 comments</li>
+                <li>09th July 2013</li>
+            </ul>
+            <p>It is a long established fact that a reader will be distracted by the readable content of a page</p>
+        </article>
+        <!--\\blog-->
+        
+        
+        <article class="blog">
+        	<div class="blog-visual">
+				<%= image_tag('blog/b2.jpg') %>
+            	<!--<img src="assets/img/blog/b2.jpg" alt="" />-->
+                <div class="blog-hover">
+                	<div class="hover-icons animated ">
+                    	<span class="icon-search"></span>
+                    </div>
+                </div>
+            </div>
+            <a href="#" class="head">It is a long established fact that a reader will be</a>
+            <ul>
+            	<li>22 comments</li>
+                <li>09th July 2013</li>
+            </ul>
+            <p>I’m never one to turn down a bit of shopping, so I am thrilled</p>
+        </article>
+        <!--\\blog-->
+        
+        
+        
+        <article class="blog">
+        	<div class="blog-visual">
+				<%= image_tag('blog/b3.jpg') %>
+            	<!--<img src="assets/img/blog/b3.jpg" alt="" />-->
+                <div class="blog-hover">
+                	<div class="hover-icons animated ">
+                    	<span class="icon-search"></span>
+                    </div>
+                </div>
+            </div>
+            <a href="#" class="head">We Are Pixel8 Sighting<BR><BR></a>
+            <ul>
+            	<li>22 comments</li>
+                <li>09th July 2013</li>
+            </ul>
+            <p>Happy Valentine’s Day. Here’s a little LoveHate print from Blanca Gomez. You’re welcome.</p>
+        </article>
+        <!--\\blog-->
+        
+        
+        
+        <article class="blog">
+        	<div class="blog-visual">
+				<%= image_tag('blog/b4.jpg') %>
+            	<!--<img src="assets/img/blog/b4.jpg" alt="" />-->
+                <div class="blog-hover">
+                	<div class="hover-icons animated ">
+                    	<span class="icon-search"></span>
+                    </div>
+                </div>
+            </div>
+            <a href="#" class="head">Why Writing Guest Articles is a No-Brainer</a>
+            <ul>
+            	<li>22 comments</li>
+                <li>09th July 2013</li>
+            </ul>
+            <p>It is a long established fact that a reader will be distracted by the readable content of a page</p>
+        </article>
+        <!--\\blog-->
+        
+        
+        <article class="blog">
+        	<div class="blog-visual">
+				<%= image_tag('blog/b5.jpg') %>
+            	<!--<img src="assets/img/blog/b5.jpg" alt="" />-->
+                <div class="blog-hover">
+                	<div class="hover-icons animated ">
+                    	<span class="icon-search"></span>
+                    </div>
+                </div>
+            </div>
+            <a href="#" class="head">We Are Pixel8 Releases BOLSA</a>
+            <ul>
+            	<li>22 comments</li>
+                <li>09th July 2013</li>
+            </ul>
+            <p>Receiving the grant will allow us to keep costs low for our lovely clients, so please cast a vote.</p>
+        </article>
+        <!--\\blog-->
+        
+        
+        
+        <article class="blog">
+        	<div class="blog-visual">
+				<%= image_tag('blog/b6.jpg') %>
+            	<!--<img src="assets/img/blog/b6.jpg" alt="" />-->
+                <div class="blog-hover">
+                	<div class="hover-icons animated ">
+                    	<span class="icon-search"></span>
+                    </div>
+                </div>
+            </div>
+            <a href="#" class="head">There are many variations of passages of Lorem</a>
+            <ul>
+            	<li>22 comments</li>
+                <li>09th July 2013</li>
+            </ul>
+            <p>There are many variations of passages of Lorem Ipsum available, but the majority</p>
+        </article>
+        <!--\\blog-->
+        
+        
+        <article class="blog">
+        	<div class="blog-visual">
+				<%= image_tag('blog/b3.jpg') %>
+            	<!--<img src="assets/img/blog/b3.jpg" alt="" />-->
+                <div class="blog-hover">
+                	<div class="hover-icons animated ">
+                    	<span class="icon-search"></span>
+                    </div>
+                </div>
+            </div>
+            <a href="#" class="head">Should You Spend Money for a Mention?</a>
+            <ul>
+            	<li>22 comments</li>
+                <li>09th July 2013</li>
+            </ul>
+            <p>It is a long established fact that a reader will be distracted by the readable content of a page</p>
+        </article>
+        <!--\\blog-->
+        
+        
+        
+        <article class="blog">
+        	<div class="blog-visual">
+				<%= image_tag('blog/b2.jpg') %>
+            	<!--<img src="assets/img/blog/b2.jpg" alt="" />-->
+                <div class="blog-hover">
+                	<div class="hover-icons animated ">
+                    	<span class="icon-search"></span>
+                    </div>
+                </div>
+            </div>
+            <a href="#" class="head">Should You Spend Money for a Mention?</a>
+            <ul>
+            	<li>22 comments</li>
+                <li>09th July 2013</li>
+            </ul>
+            <p>It is a long established fact that a reader will be distracted by the readable content of a page</p>
+        </article>
+        <!--\\blog-->
+        
+        
+        
+    </div>
+    <div id="blog-carousel-pagination" class="carousel-pagination"></div>
+
+</section>
+
+<!--=================================
+ Testimonial
+ =================================-->
+<section id="testimonial-wrapper">
+	
+    <div class="container">
+    	<div class="section-heading">What Our Client Say</div>
+        <div class="section-subheading">We love hearing from our clients</div>
+        <div class="testi-holder">
+        	
+            <div id="testimonial-carousel" class=" flexslider">
+            	<ul class="slides">
+                
+                	<li>
+                    	<div class="row">
+                        	<div class="col-lg-10 col-md-10 col-sm-10 col-lg-offset-1 col-md-offset-1 col-md-offset-1">
+                                <article class="testimonial">
+                                    <div class="quots"><span class="icon-quote-left"></span></div>
+                                    <p>As a creative, ortax excels in translating messaging into relevant visual branding for web, social and print. No matter the client, ortax designs have always told effective stories.</p>
+                                    
+                                    <a href="#">- Fernando Delegado</a>
+                                    <div class="quots"><span class="icon-quote-right"></span></div>
+                                </article><!--\\testimonial-->
+                            </div>
+                        </div>
+                    </li>
+                    
+                    <li>
+                    	<div class="row">
+                        	<div class="col-lg-10 col-md-10 col-sm-10 col-lg-offset-1 col-md-offset-1 col-md-offset-1">
+                                <article class="testimonial">
+                                    <div class="quots"><span class="icon-quote-left"></span></div>
+                                    <p>As a creative, ortax excels in translating messaging into relevant visual branding for web, social and print. No matter the client, ortax designs have always told effective stories.</p>
+                                    
+                                    <a href="#">- Fernando Delegado</a>
+                                    <div class="quots"><span class="icon-quote-right"></span></div>
+                                </article><!--\\testimonial-->
+                            </div>
+                        </div>
+                    </li>
+                    
+                    
+                    <li>
+                    	<div class="row">
+                        	<div class="col-lg-10 col-md-10 col-sm-10 col-lg-offset-1 col-md-offset-1 col-md-offset-1">
+                                <article class="testimonial">
+                                    <div class="quots"><span class="icon-quote-left"></span></div>
+                                    <p>As a creative, ortax excels in translating messaging into relevant visual branding for web, social and print. No matter the client, ortax designs have always told effective stories.</p>
+                                    
+                                    <a href="#">- Fernando Delegado</a>
+                                    <div class="quots"><span class="icon-quote-right"></span></div>
+                                </article><!--\\testimonial-->
+                            </div>
+                        </div>
+                    </li>
+                    
+                    
+                    
+                </ul>
+            </div>
+        
+        	
+            
+            
+        </div>
+        
+    </div>
+    
+</section>
+<!--=================================
+ promo-line
+ =================================-->
+
+<section id="promo-line" class="parallax">
+    <div class="container">
+        <div class="row">
+             <div class="col-lg-10 col-md-10 col-sm-10 col-lg-offset-1 col-md-offset-1 col-md-offset-1">
+                                  
+                <h4>Ortax help companies succeed by connecting with audiences and building handcrafted websites to deliver extraordinary results</h4>
+                <div class="link"><a href="#">Only on Themeforest</a></div>
+             </div>
+        </div>
+    </div>
+</section>
+<!--=================================
+ Latest feeds
+ =================================-->
+<section id="feeds-wrapper">
+  
+  <div class="container">	
+  		<div class="row">
+        
+        	<div class="col-lg-4 col-md-4 col-sm-4 makeitfade">
+            
+            	<div class="head">About Ortax</div>
+                <div class="about-short">
+                	<p>Praesent dapibus, neque id cursus faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. Aliquam erat volutpat. Nam dui mi, tincidunt quis, accumsan porttitor, facilisis luctus, metus.</p>
+                </div>
+            </div>
+            
+            <div class="col-lg-4 col-md-4 col-sm-4 makeitfade">
+            	<div class="head">Ortax News</div>
+                <div class="latest-blog">
+                    <div class="latest-post">
+                        <div class="post-date">
+                            <div data-hover="24" class="date">24</div>
+                            <div class="month">July</div>
+                        </div>
+                        <div class="detail">
+                            <a href="#" class="title">Praesent dapibus, neque id cursus</a>
+                            <p>Faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. </p>
+                        </div>
+                    </div>
+               
+                    <div class="latest-post">
+                        <div class="post-date">
+                        
+                            <div data-hover="17" class="date">17</div>
+
+                            <div class="month">May</div>
+                        </div>
+                        <div class="detail">
+                            <a href="#" class="title">Praesent dapibus, neque id cursus</a>
+                            <p>Faucibus, tortor neque egestas augue, eu vulputate magna eros eu erat. </p>
+                        </div>
+                    </div>
+                 </div>
+            </div>
+            
+            <div class="col-lg-4 col-md-4 col-sm-4 makeitfade">
+            	<div class="head">Photostream @ortax</div>
+                <div class="flicker-holder">
+                	<ul class="flicker"></ul>
+                </div>
+            </div>
+         
+        </div>
+  </div>
+  
+
+
+</section>
+ 
+
+<!--=================================
+ Contact
+ =================================-->
+<section id="contact-wrapper">
+	<div class="container">
+    	<div class="section-icon"><span class="icon-envelope-alt"></span></div>
+    	<div class="section-heading">Contact Ortax</div>
+        <div class="section-subheading">Want to work with us or just want to say hello? Call us at (323) 205-6876.</div>
+    	
+		<!-- REMOVE THIS SECTION STAAART-->
+		<!--
+        <form>
+            <div class="row">
+            	<div class="col-lg-3 col-md-3 col-sm-3">
+                	<input type="text" placeholder="Name" />
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-3">
+                	<input type="text" placeholder="Email" />
+                </div>
+                
+                <div class="col-lg-3 col-md-3 col-sm-3">
+                	<textarea placeholder="Message"></textarea>
+                </div>
+                
+                <div class="col-lg-3 col-md-3 col-sm-3">
+                	<button type="submit"><span class="send-icons"><span class="send-text">Throw it!</span></span></button>
+                </div>
+                
+            </div>
+        </form>
+		-->
+		<!-- REMOVE THIS SECTION END-->
+		
+		<!-- ADD THIS SECTION START -->
+		<div class="response-message">
+			<div class="section-heading-lg">
+				Thank you for contacting us
+			</div>
+		</div>
+		<div class="response-errors">
+			<a href="#" class="section-heading"></a>
+		</div>
+		
+        <form id="contact-form" action="send-email.php" method="POST">
+            <div class="row">
+            	<div class="col-lg-3 col-md-3 col-sm-3">
+                	<input name="contact_name" id="contact_name" type="text" placeholder="Name" />
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-3">
+                	<input name="contact_email" id="contact_email" type="text" placeholder="Email" />
+                </div>
+                
+                <div class="col-lg-3 col-md-3 col-sm-3">
+                	<textarea name="contact_message" id="contact_message" placeholder="Message"></textarea>
+                </div>
+                
+                <div class="col-lg-3 col-md-3 col-sm-3">
+                	<button type="submit"><span class="send-icons"><span class="send-text">Throw it!</span></span></button>
+                </div>
+                
+            </div>
+        </form>
+		<!-- ADD THIS SECTION END -->
+        
+    </div>
+ 
+    
+</section> 
+<!--=================================
+ Map
+ =================================-->
+
+<section id="our-location">
+	<div class="container">
+		<div class="section-heading">On the Map</div>
+    </div>
+    	
+	<div id="contact-map"></div>
+	
+</section> 
+ 
+<!--=================================
+ Footer
+ =================================--> 
+<footer id="footer-wrapper">
+  
+  	<div class="container">
+        <div class="goto">
+        	<ul>
+            	<li><a href="showcase.html">Showcase</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="team.html">team</a></li>
+                <li><a href="elements.html">Elements</a></li>
+                <li><a href="contact.php">CONTACT</a></li>
+                <li><a href="blog.html">Blog</a></li>
+            </ul>
+        </div>
+        <div class="copyright">
+        	&copy; Copyrights 2013, Ortax. All rights reserved. Terms & Services | Privacy
+        </div>
+        
+        <div class="social-links">
+        	<ul class="social">
+                  <li class="facebook"><a href="#">Facebook</a></li>
+                  <li class="twitter"><a href="#">Twitter</a></li>
+                  <li class=" youtube"><a href="#">youtube</a></li>
+                  <li class="flicker-social"><a href="#">flicker-social</a></li>
+                  <li class=" viemo"><a href="#">viemo</a></li>
+                  <li class=" linkedin"><a href="#">linkedin</a></li>
+                  <li class=" behance"><a href="#">behance</a></li>
+                  <li class="s6"><a href="#">s6</a></li>
+             </ul>
+        </div>
+        
+    </div>
+  
+  
+</footer>
+ 
+</div> 
+<!--=================================
+Script Source
+=================================-->
+
+<%= javascript_include_tag "application" %>
+
+ 
+
+
+<script>
+
+
+
+
+	var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+	(function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+	g.src='//www.google-analytics.com/ga.js';
+	s.parentNode.insertBefore(g,s)}(document,'script'));
+</script>
+
+
+
+
+
+<script type="text/javascript">
+var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-38114380-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+function MM_preloadImages() { //v3.0
+  var d=document; if(d.images){ if(!d.MM_p) d.MM_p=new Array();
+    var i,j=d.MM_p.length,a=MM_preloadImages.arguments; for(i=0; i<a.length; i++)
+    if (a[i].indexOf("#")!=0){ d.MM_p[j]=new Image; d.MM_p[j++].src=a[i];}}
+}
+</script>
+
+
+ 
+</body>
+</html>

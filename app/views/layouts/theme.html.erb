@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--><html class="no-js"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>Ortax - Bootstrap Multipurpose HTML5 Theme</title>
+
+<!--=================================
+ Meta tags
+ =================================-->
+
+<meta name="description" content="">
+<meta content="yes" name="apple-mobile-web-app-capable" />
+<meta name="viewport" content="minimum-scale=1.0, width=device-width, maximum-scale=1, user-scalable=no" />
+
+<!--=================================
+ Style Sheets
+ =================================-->
+<link href='http://fonts.googleapis.com/css?family=Lato:400,300,700,400italic,900' rel='stylesheet' type='text/css'>
+
+<%= stylesheet_link_tag    "application", :media => "all" %>
+<%= javascript_include_tag 'modernizr-2.6.2-respond-1.1.0.min.js' %>
+<%= csrf_meta_tags %>
+
+</head>
+<body class="is-wide">
+	<div id="layout" class="wide-layout">
+<!--=================================
+Markup
+=================================-->
+<!--=========================================
+	Navigation
+  ========================================-->     
+		<%= render 'layouts/header' %>
+		<%= yield %>
+<!--=================================
+ Footer
+ =================================--> 
+		<%= render 'layouts/footer' %>
+	</div><!-- end wide-layout -->
+<!--=================================
+Script Source
+=================================-->
+	<%= javascript_include_tag "application" %>
+	<%= render 'layouts/foot' %>
+
+</body>
+</html>
