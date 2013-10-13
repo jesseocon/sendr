@@ -12,9 +12,9 @@
             <!-- MAIN NAV : begin -->
             <nav class="main">
                 <ul>
-                    <li><%= link_to raw("<span>Home<span>"), static_pages_home_path %></a></li>
+                    <li><%= link_to raw("<span>Docs</span>"), static_pages_home_path %></a></li>
                     <li>
-                        <a href="#"><span>Showcase</span></a>
+                        <%= link_to raw("<span>Demos</span>"), '#' %>
                         <ul class="submenu">
                             <li><a href="showcase.html" ><span>Circle portfolio</span></a></li>
                             <li><a href="showcase-Block.html" ><span>Block Portfolio</span></a></li>
@@ -23,7 +23,7 @@
                     </li>
                     
                     <li>
-                        <a href="#"><span>Pages</span></a>
+                        <%= link_to raw("<span>Pricing</span>"), static_pages_pricing_path %>
                         <ul class="submenu">
                             <li><a href="about.html" ><span>About</span></a></li>
                             <li><a href="team.html"><span>Team</span></a></li>
@@ -37,7 +37,7 @@
                     </li>
                     
                     <li>
-                        <a href="blog.html"><span>Blog</span></a>
+                        <%= link_to raw("<span>About</span>"), static_pages_about_path %>
                         <ul class="submenu">
                            	<li><a href="blog.html"><span>Masonry Blog</span></a></li>
                             <li><a href="blog_listing.html"><span>Standard Blog</span></a></li>
@@ -46,8 +46,9 @@
                             <li><a href="blog-inner.html"><span>Blog Detail</span></a></li>
                         </ul>
                     </li>
-                    
-                    <li><a href="contact.php"><span>Contact</span></a></li>                                
+					
+					<li><%= link_to raw("<span>Developer Portal</span>"), '#' %></li>
+					<li><%= link_to raw("<span>Sign In</span>"), login_path %></li>                            
                     
                 </ul>
                 <select>

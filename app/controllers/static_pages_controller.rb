@@ -1,5 +1,20 @@
 class StaticPagesController < ApplicationController
   layout 'theme'
-  def home
+  
+  def about
+    
   end
+  
+  def docs
+    
+  end
+  
+  def home
+    
+  end
+  
+  def pricing
+    
+  end
+  
 end
