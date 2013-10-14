@@ -8,17 +8,16 @@ describe Task do
       executed: false,
       app_token: 'somelongstring'
     )
-    
-    
   end
 
-  
   subject { @task }
   
-  it { should respond_to(:url) }
-  it { should respond_to(:exec_time) }
-  it { should respond_to(:executed) }
-  it { should respond_to(:app_token) }
+  it 'should respond to the correct messages' do
+    should respond_to(:url) 
+    should respond_to(:exec_time)
+    should respond_to(:executed) 
+    should respond_to(:app_token) 
+  end
   
   describe 'when the url is blank' do
     before { @task.url = '' }
