@@ -28,8 +28,4 @@ describe Task do
     before { @task.exec_time = '' }
     it { should_not be_valid }
   end
-  
-  describe '#in_the_future' do
-    
-  end
 end
