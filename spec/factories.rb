@@ -1,3 +1,4 @@
+require 'factory_girl'
 FactoryGirl.define do 
   factory :task do
     url 'http://jesseocon.com/users/new'

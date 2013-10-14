@@ -1,6 +1,7 @@
 class Task < ActiveRecord::Base
   attr_accessible :url, :exec_time, :executed, :app_token, :method, :command_url
   attr_accessor :method, :command_url
+  
   delegate :query, :query_string, :params, :port, :host, :protocol, :path, :proto_host, to: :command_url
   validates :url, presence: true
   validates :exec_time, presence: true
@@ -40,12 +41,7 @@ class Task < ActiveRecord::Base
   end
   
   def command_url
-    puts "******************"
-    puts "???????????#{@command_url}"
-    puts "^^^^^^^^^^^#{self.exec_time}"
     @command_url ||= CommandUrl.new(url_string: self.url)
-    puts "????????????????????#{@command_url}"
-    @command_url
   end
   
   def post_url
@@ -64,7 +60,6 @@ class Task < ActiveRecord::Base
     RestClient.get(@command_url.proto_host, @command_url.params)
   end
 end
-# RestClient.post('http://localhost:3000/tasks, {url: 'mogreet.com', exec_time: '2013-09-17 05:49:00 000', method: 'get'} )
 
 
 

@@ -10,6 +10,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(params[:user])
     if @user.save
+      @user.deliver_verification_instructions(@user)
       redirect_to root_url, notice: "Thank you for signing up to Snedit"
     else
       render :new

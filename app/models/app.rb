@@ -2,6 +2,9 @@ class App < ActiveRecord::Base
   belongs_to :user
   attr_accessible :name, :url, :verified
   
+  validates :name, presence: true
+  validates :url, presence: true
+  
   before_create :generate_api_key
   
   scope :readable_by, lambda { |user_id| where(user_id: user_id) }

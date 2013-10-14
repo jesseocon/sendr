@@ -8,7 +8,10 @@ describe Task do
       executed: false,
       app_token: 'somelongstring'
     )
+    
+    
   end
+
   
   subject { @task }
   

@@ -22,12 +22,14 @@ Sendr::Application.routes.draw do
   resources :apps
   resources :demos
   resources :password_resets
+  resources :sessions
   resources :tasks
   resources :tests
   resources :users do
     resources :apps
   end
-  resources :sessions
+  resources :verifications
+  
   ## JSON API
   namespace :api, defaults: { format: 'json'} do
     namespace :v1 do
