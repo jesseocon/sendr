@@ -2,18 +2,17 @@ class Permission < Struct.new(:user)
   def initialize(user)         
     allow :password_resets, [:new, :create, :edit, :update]
     allow :sessions,        [:create, :destroy, :new]
-    allow :users,           [:index, :new, :create]
+    allow :users,           [:new, :create]
     allow :static_pages,    [:home, :about, :help]
     allow :verifications,   [:show]
     if user
-      allow :apps,          [:new, :create, :index] do |a|
+      allow :apps,          [:new, :index] do |a|
         a = user.id
       end
-      allow :apps,          [:edit, :show, :update, :destroy] do |a|
+      allow :apps,          [:edit, :create, :show, :update, :destroy] do |a|
         a.user_id == user.id
       end
-      allow :users,         [:show]
-      allow :users,         [:edit, :update, :destroy] do |u|
+      allow :users,         [:edit, :update, :destroy, :show] do |u|
         u.id == user.id
       end
       allow_all if user.admin

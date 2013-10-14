@@ -1,19 +1,16 @@
 require 'spec_helper'
 
 describe App do
-  before do 
-    @app = App.create(
-      name: 'Cool Application',
-      url: 'http://somebadassurl.com'
-    )
-  end
+  before { @app = FactoryGirl.build(:app) }
   
   subject { @app }
   
-  it { should respond_to(:name) }
-  it { should respond_to(:url) }
-  it { should respond_to(:verified) }
-  it { should respond_to(:api_key) }
+  it 'should respond to the correct messages' do
+    should respond_to(:name)
+    should respond_to(:url)
+    should respond_to(:verified)
+    should respond_to(:api_key)
+  end
   
   describe 'when the name is left blank' do
     before do 
