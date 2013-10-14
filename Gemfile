@@ -32,9 +32,12 @@ end
 
 group :test do
   gem 'capybara', '1.1.2'
+  gem 'database_cleaner'
   gem 'growl', '1.0.3'
   gem 'launchy'
   gem 'rb-fsevent', :require => false
+  gem 'selenium'
+  gem 'selenium-webdriver', '2.35.0'
   gem 'spork'
 
 end

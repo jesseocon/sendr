@@ -1,0 +1,81 @@
+<header class="navbar-fixed-top">
+    <div class="container">
+        <div class="header-inner clearfix">
+            <!-- HEADER BRANDING : begin -->
+			<div class='branding'><%= link_to 'Snedit', static_pages_home_path %></div>
+            <!-- HEADER BRANDING : end -->
+
+            <!-- NAV TOGGLE : begin -->
+            <button class="nav-toggle"><i class="icon-reorder"></i></button>
+            <!-- NAV TOGGLE : end -->
+
+            <!-- MAIN NAV : begin -->
+            <nav class="main">
+                <ul>
+                    <li><%= link_to raw("<span>Docs</span>"), static_pages_home_path %></a></li>
+                    <li>
+                        <%= link_to raw("<span>Demos</span>"), '#' %>
+                        <ul class="submenu">
+                            <li><a href="showcase.html" ><span>Circle portfolio</span></a></li>
+                            <li><a href="showcase-Block.html" ><span>Block Portfolio</span></a></li>
+                            <li><a href="showcase-detail.html" ><span>Portfolio Detail</span></a></li>
+                        </ul>
+                    </li>
+                    
+                    <li>
+                        <%= link_to raw("<span>Pricing</span>"), static_pages_pricing_path %>
+                        <ul class="submenu">
+                            <li><a href="about.html" ><span>About</span></a></li>
+                            <li><a href="team.html"><span>Team</span></a></li>
+                            <li><a href="FAQ.html"><span>FAQ</span></a></li>
+                            <li><a href="elements.html"><span>Elements</span></a></li>
+                            <li><a href="pricing.html"><span>Pricing Table</span></a></li>
+                            <li><a href="soon.html"><span>Coming Soon</span></a></li>
+                            <li><a href="blank_content.html"><span>Full Width</span></a></li>
+                            <li><a href="404.html"><span>404 error</span></a></li>
+                        </ul>
+                    </li>
+                    
+                    <li>
+                        <%= link_to raw("<span>About</span>"), static_pages_about_path %>
+                        <ul class="submenu">
+                           	<li><a href="blog.html"><span>Masonry Blog</span></a></li>
+                            <li><a href="blog_listing.html"><span>Standard Blog</span></a></li>
+                            <li><a href="blog-leftmenu.html"><span>Blog left menu</span></a></li>
+                            <li><a href="blog-rightmenu.html"><span>Blog Right menu</span></a></li>
+                            <li><a href="blog-inner.html"><span>Blog Detail</span></a></li>
+                        </ul>
+                    </li>
+					
+					<li><%= link_to raw("<span>Developer Portal</span>"), '#' %></li>
+					<li><%= link_to raw("<span>Sign In</span>"), login_path %></li>                            
+                    
+                </ul>
+                <select>
+                    <option value="index.php">Home</option>
+                    <option value="showcase.html">Showcase</option>
+                    <option value="showcase-Block.html">- Showcase-Block</option>
+                    <option value="showcase-detail.html">- Portfolio Detail</option>
+                    <option value="about.html">About Us</option>
+                    <option value="team.html">Team</option>
+                    <option value="FAQ.html">FAQ</option>
+                    <option value="elements.html">Elements</option>
+                    <option value="pricing.html">Pricing Table</option>
+                    <option value="soon.html">Coming Soon</option>
+                    <option value="blank_content.html">Full Width</option>
+                    <option value="404.html">404 Error</option>
+                    <option value="blog.html">Blog</option>
+                    <option value="blog.html">- Masonry Blog</option>
+                    <option value="blog_listing.html">- Standard Blog</option>
+                    <option value="blog-leftmenu.html">- Blog left menu</option>
+                    <option value="blog-rightmenu.html">- Blog Right menur</option>
+                    <option value="blog-inner.html">- Blog Detail</option>
+                    <option value="contact.php">Contact</option>
+                </select>
+            </nav>
+            <!-- MAIN NAV : end -->
+
+        </div>
+    </div>
+</header>
+<!-- HEADER : end -->

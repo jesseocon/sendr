@@ -1,26 +1,33 @@
 <div class="row">
-    <div class="span6 offset3">
-        <h1>Already have an account?</h1>
-        <div style='width:50%;margin: 0 auto;padding-left:135px;padding-bottom:50px;'>
-            <%= link_to 'Sign in now!', login_path, class: 'btn btn-success btn-large' %>
-        </div><!-- end of inline styled -->
-    </div><!-- end of span6 offset3 -->
-    <div class="span6 offset3">
-        <h1 class="sign-h">FolioShine</h1>
-        <h3 class="sign-h">Never miss a moment. Countless perspectives from the most important events.</h3>
-    </div><!-- end of span6 offset3-->
-</div><!-- end row-->
+	<h1 class='sign'>Sign in to start scheduling all the events in your app.</h1>
+    <div class="span6 offset3 snogin">
+		<div class='row'>
+	        <%= form_for @user, id: 'signup-form' do |f| %>
+			    <div class='span6'>
+			    	<%= render 'error_messages' %>
+			    </div>
+	            <div class='span6'>
+	            	<%= f.text_field :f_name, placeholder: 'First Name', class: "span6" %>
+	            </div>
+	            <div class='span6'>
+	            	<%= f.text_field :l_name, placeholder: 'Last Name', class: "span6" %>
+	            </div>
+	            <div class='span6'>
+	            	<%= f.text_field :email, placeholder: 'Email', class: "span6" %>
+	            </div>
+	            <div class='span6'>
+	            	<%= f.password_field :password, placeholder: 'Password', class: "span6" %>
+	            </div>
+	            <div class='span6'>
+	            	<%= f.password_field :password_confirmation, placeholder: 'Re-type Password', class: "span6" %>
+	            </div>
+				<div class='span6'>
+					<button class="btn btn-hg btn-primary">
+					  Sign Up!
+					</button>
+				</div>
+	        <% end %>
+		</div>
 
-<div class="row">
-    <div class="span4 offset4">
-        <%= form_for @user, id: 'signup-form' do |f| %>
-            <%= render 'error_messages' %>
-            <%= f.text_field :f_name, placeholder: 'First Name', class: "input-block-level input-medium" %>
-            <%= f.text_field :l_name, placeholder: 'Last Name', class: "input-block-level input-medium" %>
-            <%= f.text_field :email, placeholder: 'Email', class: "input-block-level input-medium" %>
-            <%= f.password_field :password, placeholder: 'Password', class: "input-block-level input-medium" %>
-            <%= f.password_field :password_confirmation, placeholder: 'Re-type Password', class: "input-block-level input-medium" %>
-            <%= f.submit "Sign up", class: 'btn btn-primary fullwidth' %>
-        <% end %>
     </div><!-- end span4 offset4-->
 </div><!-- end of row -->

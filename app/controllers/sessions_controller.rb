@@ -6,6 +6,7 @@ class SessionsController < ApplicationController
   def create
     @user = User.find_by_email(params[:email])
     if (@user && @user.authenticate(params[:password])) && @user.verified == true
+      puts "IM in the verified portion of the app"
       if params[:remember_me]
         cookies.permanent[:auth_token] = @user.auth_token
       else
@@ -13,7 +14,8 @@ class SessionsController < ApplicationController
       end
         redirect_to root_url, notice: "Logged in!"
     elsif (@user && @user.authenticate(params[:password])) && @user.verified.nil?
-      flash.now[:error] = "You have to verify your account first"
+      puts "Im in the user verified = nil part of the application"
+      flash[:error] = "You have to verify your account first"
       redirect_to login_url
     else
       flash.now[:error] = "Email or password is invalid"

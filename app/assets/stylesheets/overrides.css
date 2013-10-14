@@ -1,0 +1,54 @@
+body {
+	padding:100px;
+}
+#stop {
+	-webkit-box-shadow: 0 1px 10px rgba(250, 250, 250, 0);
+	-moz-box-shadow: 0 1px 10px rgba(0, 0, 0, 0);
+	box-shadow: 0 1px 10px rgba(0, 0, 0, 0);
+	background:#34495E;
+}
+
+h1.sign {
+	text-align:center;
+}
+
+div.brand a {
+	text-decoration:none;
+	margin-left:-30px;
+}
+
+.snogin {
+	margin-top: 40px;
+	background:#ECF0F1;
+	-webkit-border-radius: 15px;
+	border-radius: 15px;
+	padding: 35px 17px 60px 17px;
+}
+
+.snogin button {
+	width: 100%;
+}
+
+div.todo div.header {
+	background: #1ABC9C;
+	background-size: 16px 16px;
+	border-radius: 6px 6px 0 0;
+	color: #34495E;
+	padding: 19px 25px 20px;
+	font-size: 19px;
+	font-weight: 700;
+}
+
+
+div.todo ul li a { 
+	text-decoration: none;
+}
+
+a.tooltipped {
+	text-decoration:none;
+	color:#34495E;
+}
+
+.navbar .nav > li > a { 
+	padding: 15px 20px 12px 20px;
+}

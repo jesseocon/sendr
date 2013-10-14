@@ -12,7 +12,7 @@ Sendr::Application.routes.draw do
   get 'pricing',            to: 'static_pages#pricing', as: 'pricing'
   
   # root of the app
-  root to: 'static_pages#home'
+  root to: 'sessions#new'
 
   get 'static_pages/about'
   get 'static_pages/docs'
@@ -24,7 +24,9 @@ Sendr::Application.routes.draw do
   resources :password_resets
   resources :tasks
   resources :tests
-  resources :users
+  resources :users do
+    resources :apps
+  end
   resources :sessions
   ## JSON API
   namespace :api, defaults: { format: 'json'} do

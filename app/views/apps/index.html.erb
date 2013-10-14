@@ -1,0 +1,14 @@
+<div class='row'>
+	<div class='span6'>
+		<div class='todo mrm'>
+			<div class='header'>
+				<span>Applications</span>
+			</div>
+			<ul>
+				<% @apps.each do |app| %>
+					<li><%= link_to app.name, edit_user_app_path(@user, app) %></li>
+				<% end %>
+			</ul>
+		</div>
+	</div>
+</div>

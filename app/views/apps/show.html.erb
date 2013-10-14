@@ -1,0 +1,10 @@
+<div class='row'>
+	<div class='span12'>
+		<%= render 'shared/flash_messages' %>
+		<h3>Application Name: <small>&nbsp;<%= @app.name %></small></h3>
+		<h3>API Key: <small>&nbsp;<%= @app.api_key %></small></h3>
+		<h3>Application Url <small>&nbsp;<%= @app.url %></small></h3>
+		<h3>Verified <small>&nbsp;<%= @app.verified.nil? || @app.verified == false ? 'Not verified yet' : 'Verified' %></small></h3>
+		<%= link_to 'Edit Application', edit_user_app_path(@user, @app), class: 'btn btn-hg btn-primary'%>
+	</div>
+</div>

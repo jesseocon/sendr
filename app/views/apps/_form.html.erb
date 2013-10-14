@@ -1,0 +1,25 @@
+<div class='row'>
+	<div class='span6'>
+		<%= form_for [@user, @app] do |f| %>
+		<%= render 'shared/flash_messages' %>
+		<div class='row'>
+			<div class='span4'>
+				<%= f.text_field :name, placeholder: 'Application Name' %>
+			</div>
+			
+			<div class='span4'>
+				<%= f.text_field :url, placeholder: 'Application Url' %>
+			</div>
+			<div class='span4'>
+				<button class="btn btn-hg btn-primary">
+					<% if ['new, create'].include?(@current_action) %>
+						Create Application
+					<% else %>
+						Update Application
+					<% end  %> 
+				</button>
+			</div>
+		</div>
+		<% end %>
+	</div>
+</div>

@@ -8,7 +8,12 @@ class UsersController < ApplicationController
   end
   
   def create
-    
+    @user = User.new(params[:user])
+    if @user.save
+      redirect_to root_url, notice: "Thank you for signing up to Snedit"
+    else
+      render :new
+    end
   end
   
   def edit
@@ -26,4 +31,13 @@ class UsersController < ApplicationController
   def destroy
     
   end
+  
+  private
+    def current_resource
+      @current_resource ||= User.find(params[:id]) if params[:id]
+    end
+    
+    def find_user
+      @user = User.find(params[:id])
+    end
 end

@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  has_secure_password
+  has_many :apps
   attr_accessible :auth_token, :email, :password, :password_confirmation, 
                   :password_digest, :password_reset_at, :password_reset_token, 
                   :verification_token, :verified, :f_name, :l_name, :stripe_id,

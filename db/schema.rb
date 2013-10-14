@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130924051740) do
+ActiveRecord::Schema.define(:version => 20131013213704) do
 
   create_table "api_keys", :force => true do |t|
     t.string   "access_token"
@@ -21,6 +21,16 @@ ActiveRecord::Schema.define(:version => 20130924051740) do
   end
 
   add_index "api_keys", ["access_token"], :name => "index_api_keys_on_access_token", :unique => true
+
+  create_table "apps", :force => true do |t|
+    t.string   "api_key"
+    t.integer  "user_id"
+    t.string   "name"
+    t.string   "url"
+    t.boolean  "verified"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "delayed_jobs", :force => true do |t|
     t.integer  "priority",   :default => 0
