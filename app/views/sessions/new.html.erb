@@ -1,25 +1,22 @@
 <div class='row'>
 	<h1 class='sign'>Sign in to start scheduling all the events in your app.</h1>
-
 		<div class='span4 offset4 snogin'>
-
-				<%= render 'shared/flash_messages' %>
-				<%= form_tag sessions_path, id: 'contact-form' do %>
-				<div class='row'>
-					<div class="span4">
-						<%= text_field_tag :email, "", placeholder: 'Email', class: 'span4', id: 'login-email'%>
-					</div>
-					<div class="span4">
-						<%= password_field_tag :password, "", placeholder: 'Password', class: 'span4' %>	
-					</div>
-					<div class='span4'>
-						<button class="btn btn-hg btn-primary">
-						  Sign In!
-						</button>
-					</div>
+			<%= render 'shared/flash_messages' %>
+			<%= form_tag sessions_path, id: 'contact-form' do %>
+			<div class='row'>
+				<div class="span4">
+					<%= text_field_tag :email, "", placeholder: 'Email', class: 'span4', id: 'login-email'%>
 				</div>
-				<% end %>
-
+				<div class="span4">
+					<%= password_field_tag :password, "", placeholder: 'Password', class: 'span4' %>	
+				</div>
+				<div class='span4'>
+					<button class="btn btn-hg btn-primary">
+					  Sign In!
+					</button>
+				</div>
+			</div>
+			<% end %>
 		</div>
 	</div>
 </div>

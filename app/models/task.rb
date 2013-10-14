@@ -15,7 +15,6 @@ class Task < ActiveRecord::Base
     puts e.message
   end
   response = handle_asynchronously :in_the_future, run_at: Proc.new { |i| i.exec_time }
-  puts response
   
   def method=(method)
     @method = method.downcase rescue nil
@@ -41,7 +40,12 @@ class Task < ActiveRecord::Base
   end
   
   def command_url
+    puts "******************"
+    puts "???????????#{@command_url}"
+    puts "^^^^^^^^^^^#{self.exec_time}"
     @command_url ||= CommandUrl.new(url_string: self.url)
+    puts "????????????????????#{@command_url}"
+    @command_url
   end
   
   def post_url

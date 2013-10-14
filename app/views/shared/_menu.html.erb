@@ -11,7 +11,12 @@
 			<div class='nav-collapse collapse' id='nav-collapse-02'>
 				<ul class='nav mid-menu'>
 					<li class='active'>
-						<%= link_to 'All Applications', user_apps_path(@user), class: 'mid-menu' %>
+						
+						<%= link_to 'Applications', '#', class: 'mid-menu' %>
+						<ul>
+							<li><%= link_to 'My Apps', user_apps_path(@user) %></li>
+							<li><%= link_to 'Create an App', new_user_app_path(@user) %></li>
+						</ul>
 					</li>
 					<li></li>
 				</ul>

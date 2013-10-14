@@ -1,7 +1,15 @@
 require 'spec_helper'
 
 describe Task do 
-  before { @task = FactoryGirl.create(:task) }
+  before do 
+    @task = Task.create!(
+      url: 'http://jesseocon.com/users/new',
+      exec_time: 2.hours.from_now.utc,
+      executed: false,
+      app_token: 'somelongstring'
+    )
+  end
+  
   subject { @task }
   
   it { should respond_to(:url) }
