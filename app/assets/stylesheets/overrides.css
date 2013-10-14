@@ -49,6 +49,6 @@ a.tooltipped {
 	color:#34495E;
 }
 
-.navbar .nav > li > a { 
+.navbar .nav > li > a.mid-menu { 
 	padding: 15px 20px 12px 20px;
 }
