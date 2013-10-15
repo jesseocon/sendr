@@ -18,7 +18,7 @@ describe 'App Pages' do
       should have_link('Create an App', href: new_user_app_path(user))
       
       App.readable_by(user.id).each do |app|
-        page.should have_link(app.name, href: edit_user_app_path(user, app))
+        page.should have_link(app.name, href: user_app_path(user, app))
       end
       
       App.readable_by(other_user.id).each do |app|
@@ -46,8 +46,24 @@ describe 'App Pages' do
         should have_selector('div.alert-error', text: 'Not Authorized!')
         visit user_apps_path(other_user)
         should have_selector('div.alert-error', text: 'Not Authorized!')
+        visit user_app_path(other_user, app)
+        should have_selector('div.alert-error', text: 'Not Authorized!')
       end
-      
+    end
+    
+    describe 'the app#show page' do
+      it 'should display the correct elements' do
+        signin(user, {}, true, 'Sign In!')
+        visit user_app_path(user, app)
+        should have_link('Edit Application')
+        should have_selector('h3', text: app.name)
+        should have_selector('h3', text: app.api_key)
+        should have_selector('h3', text: app.url)
+        should have_selector('h3', text: app.verified)
+        should have_selector('ul.mid-menu')
+        should have_link('My Apps', href: user_apps_path(user))
+        should have_link('Create an App', href: new_user_app_path(user))
+      end
     end
     
   end

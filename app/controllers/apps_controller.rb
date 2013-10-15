@@ -44,7 +44,10 @@ class AppsController < ApplicationController
   end
   
   def find_app
-    @app = App.find(params[:id])
+    @app = @user.apps.find(params[:id])
+  rescue ActiveRecord::RecordNotFound
+    flash[:error] = "Not Authorized!"
+    redirect_to root_url
   end
   
   def current_resource

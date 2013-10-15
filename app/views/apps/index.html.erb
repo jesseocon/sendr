@@ -7,7 +7,7 @@
 			</div>
 			<ul>
 				<% @apps.each do |app| %>
-					<li><%= link_to app.name, edit_user_app_path(@user, app) %></li>
+					<li><%= link_to app.name, user_app_path(@user, app) %></li>
 				<% end %>
 			</ul>
 		</div>
