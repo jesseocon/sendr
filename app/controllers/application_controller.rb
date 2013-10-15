@@ -26,7 +26,7 @@ class ApplicationController < ActionController::Base
     
     def authorize_user
       if !current_permission.allow?(params[:controller], params[:action], current_resource)
-        flash[:error] = "not Authorized!"
+        flash[:error] = "Not Authorized!"
         redirect_to root_url
       end
     end

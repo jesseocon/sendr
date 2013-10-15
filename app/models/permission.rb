@@ -6,10 +6,10 @@ class Permission < Struct.new(:user)
     allow :static_pages,    [:home, :about, :help]
     allow :verifications,   [:show]
     if user
-      allow :apps,          [:new, :index] do |a|
-        a = user.id
+      allow :apps,          [:new, :create, :index] do |a|
+        a.to_i == user.id
       end
-      allow :apps,          [:edit, :create, :show, :update, :destroy] do |a|
+      allow :apps,          [:edit, :show, :update, :destroy] do |a|
         a.user_id == user.id
       end
       allow :users,         [:edit, :update, :destroy, :show] do |u|

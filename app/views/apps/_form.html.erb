@@ -1,3 +1,4 @@
+<% carlos = ['new', 'create'].include?(@current_action) %>
 <div class='row'>
 	<div class='span6'>
 		<%= form_for [@user, @app] do |f| %>
@@ -12,11 +13,10 @@
 			</div>
 			<div class='span4'>
 				<button class="btn btn-hg btn-primary" style='width:100%;'>
-					<% if ['new, create'].include?(@current_action) %>
-						Create Application
-					<% else %>
-						Update Application
-					<% end  %> 
+					<%= ['new', 'create'].include?(@current_action) ? 
+						'Create Application' : 
+						'Update Application' 
+					%>
 				</button>
 			</div>
 		</div>

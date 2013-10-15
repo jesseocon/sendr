@@ -51,8 +51,7 @@ class AppsController < ApplicationController
     if params[:id]
       @current_resource ||= App.find(params[:id])
     else
-      @user = User.find(params[:user_id])
-      @current_resource ||= @user.id
+      @current_resource ||= params[:user_id].to_i
     end
   end
   

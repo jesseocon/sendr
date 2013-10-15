@@ -47,9 +47,7 @@ describe Permission do
       should allow(:apps, :show, app) 
       should_not allow(:apps, :show, other_app) 
       should allow(:apps, :update, app) 
-      should_not allow(:apps, :update, other_app) 
-      should_not allow(:apps, :create, other_app) 
-      should allow(:apps, :create, app) 
+      should_not allow(:apps, :update, other_app)  
     end
     
     # user permissions    
